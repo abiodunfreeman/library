@@ -1,0 +1,37 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    display:grid;
+    grid-template-columns: minmax(300px,25%) 75%;
+    grid-template-rows: 80px 1fr ;
+}
+.side-nav {
+    border: 2px deepskyblue solid;
+    grid-row:2/3;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 300px 300px;
+}
+.side-nav > form {
+    grid-row: 2/3;
+    
+    margin: 5px;
+    background-color: lightpink;
+}
+.header{
+    border: 2px deeppink solid;
+    grid-column: 1/3;
+
+}
+.main{
+    border: 8px red solid;
+    
+}
+.main  ul {
+    background-color: lightblue;
+    width: 300px;
+}

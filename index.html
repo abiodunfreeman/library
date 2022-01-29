@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="style.css">
-    <script src='script.js'></script>
+    <script defer src='script.js'></script>
 </head>
 <body>
     
@@ -16,7 +16,7 @@
         <h1>Header</h1>
     </div>
     <div class="side-nav">
-        <form>
+        <form id='addBookForm'>
             <label for="title">title</label>
             <input type="text" name='title' id='title'>
             <label for="author">author</label>
@@ -27,6 +27,7 @@
             <input value='finished' type="radio" name='radio' id='finished'>
             <label for="not-finished">not-finished</label>
             <input value='not finished'type="radio" name='radio' id='not-finished'>
+            <button id='add-new-book' type="submit">Submit</button>
         </form>
     </div>
     

@@ -3,23 +3,40 @@ let addBook   = document.querySelector('button')
 const form    = document.getElementById('addBookForm')
 const ul      = document.querySelector('ul');
 
-function createBook( title, author, pages, readStatus) {
-    this.title  = title;
-    this.author = author;
-    this.pages  = pages; 
+// function createBook( title, author, pages, readStatus) {
+//     this.title  = title;
+//     this.author = author;
+//     this.pages  = pages; 
     
-    if (readStatus === true) {
-        this.readStatus = 'finished'
-    } else if (readStatus === false ) {
-        this.readStatus = 'not qiuite done'
-    } else {
-        this.readStatus = 'what the fuck :) '
+//     if (readStatus === true) {
+//         this.readStatus = 'finished'
+//     } else if (readStatus === false ) {
+//         this.readStatus = 'not qiuite done'
+//     } else {
+//         this.readStatus = 'what the fuck :) '
+//     }
+// }
+
+class book {
+    constructor(title, author, pages, readStatus) {
+        this.title  = title;
+        this.author = author;
+        this.pages  = pages;
+
+        if (readStatus === true) {
+            this.readStatus = 'finished'
+        } else if (readStatus === false ) {
+            this.readStatus = 'not qiuite done'
+        } else {
+            this.readStatus = 'what the fuck :) '
+        }
+
     }
-}
+};
 
 function addBookToLibrary ( title, author, pages, readStatus) {
 
-    const newBook = new createBook( title, author, pages, readStatus)
+    const newBook = new book( title, author, pages, readStatus)
 
     myLibrary.push(newBook)
 }
@@ -66,10 +83,10 @@ form.addEventListener('submit', (e) => { //event listener for add book form
 
     pushToPage();
     
-    //form.reset();
+    form.reset(); //resets form values
 })
 
-ul.addEventListener('click', (e) => { //button action on li's
+ul.addEventListener('click', (e) => { //delete button 
     
      if (e.target.className === 'delete') { //delete button
         const li = e.target.parentNode.parentNode;
@@ -77,10 +94,3 @@ ul.addEventListener('click', (e) => { //button action on li's
     }
 })
 
-ul.addEventListener('change', (e) => {
-    console.log(e.target)
-})
-
-form.addEventListener('click', (e) => {
-    console.log(e.target.checked);
-})
